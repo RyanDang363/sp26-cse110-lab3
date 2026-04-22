@@ -15,7 +15,7 @@ Short sync to share progress since the last standup, align on the next slice of 
 
 ## Updates
 
-_Use one subsection per person. Keep updates brief.
+Use one subsection per person. Keep updates brief.
 
 ### Member 1 — Name
 
@@ -37,9 +37,9 @@ _Use one subsection per person. Keep updates brief.
 
 ---
 
-## Parking lot / follow-ups
+## Follow-ups
 
-_Items that need a longer discussion or a separate thread._
+Items that need a longer discussion or a separate thread.
 
 | Topic        | Owner | Next step                          |
 | ------------ | ----- | ---------------------------------- |
@@ -47,6 +47,6 @@ _Items that need a longer discussion or a separate thread._
 
 ## Links / references
 
-_Issues, PRs, docs, or decisions worth having in one place._
+Issues, PRs, docs, or decisions worth having in one place.
 
-- 
+
