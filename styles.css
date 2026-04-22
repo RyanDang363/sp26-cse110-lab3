@@ -10,17 +10,14 @@
   --minutes-border: hsl(120deg 10% 78%);
 }
 
-/* Wider-gamut colors: display-p3 + color-mix, with plain-CSS fallback */
+/*
+ * Accent chip: `color()` is valid in modern browsers but the W3C CSS Validator
+ * (direct-input / older profile) rejects `color(srgb …)` and `color(display-p3 …)`.
+ * Hex + `color-mix()` keeps the chip readable and still demonstrates `color-mix`.
+ */
 .accent-chip {
-  color: color(display-p3 0.15 0.42 0.24);
+  color: #1f5d34;
   background-color: color-mix(in srgb, var(--minutes-accent, #1b5e20) 72%, white 28%);
-}
-
-@supports not (color: color(display-p3 1 1 1)) {
-  .accent-chip {
-    color: var(--minutes-accent, #1b5e20);
-    background-color: hsla(100deg 30% 92% / 1);
-  }
 }
 
 /* Universal box model; keeps padding math predictable */
@@ -406,11 +403,12 @@ section:has(img) {
   box-shadow: inset 3px 0 0 var(--minutes-accent, #1b5e20);
 }
 
-/* Nested selector (native CSS nesting) */
-.minutes-section {
-  & details {
-    border: 1px dashed hsl(120deg 14% 72%);
-    padding: 0.4rem 0.55rem;
-    border-radius: 8px;
-  }
+/*
+ * Nested `& details { }` is equivalent to this flat rule. The W3C CSS Validator
+ * (textarea / older profile) often reports a parse error on native `&` nesting.
+ */
+.minutes-section details {
+  border: 1px dashed hsl(120deg 14% 72%);
+  padding: 0.4rem 0.55rem;
+  border-radius: 8px;
 }
