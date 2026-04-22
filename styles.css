@@ -33,12 +33,15 @@ body {
   margin: 0;
   color: var(--minutes-ink, rgb(31, 41, 51));
   background-color: var(--minutes-surface, #f4f7f4);
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: "Source Sans 3", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   line-height: 1.55;
 }
 
 /* Hex background on header band */
 .site-header {
+  position: sticky;
+  top: 0;
+  z-index: 30;
   background-color: #e8f5e9;
   /* Border LONGHAND (per edge / per property) for lab requirement */
   border-top-width: 0;
@@ -141,17 +144,190 @@ nav a {
   text-decoration: none;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
-
 nav ul {
   list-style: none;
   padding-left: 0;
 }
 
 img,
-video {
+video,
+audio {
+  display: block;
   max-width: 100%;
   height: auto;
+}
+
+/* =============================================================================
+   Lab 3 — Display, sizing, position, pseudos, flex, grid, responsiveness
+   ============================================================================= */
+
+.hero-title,
+.minutes-section h2 {
+  font-family: "Fraunces", "Source Sans 3", serif;
+}
+
+.minutes-main {
+  position: relative;
+}
+
+.lab-utility-hidden {
+  display: none;
+}
+
+.inline-glue {
+  display: inline;
+}
+
+.hero-title {
+  width: 100%;
+  max-width: 42rem;
+  min-width: 12rem;
+  height: auto;
+}
+
+.nav-pills {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.nav-pills li {
+  flex: 0 1 auto;
+}
+
+.nav-pills a {
+  display: inline-block;
+}
+
+.nav-pills a:hover {
+  text-decoration: underline;
+  background-color: hsla(100deg 45% 88% / 1);
+}
+
+.glance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.65rem;
+  align-items: stretch;
+  justify-items: stretch;
+}
+
+.glance-card {
+  min-height: 4.5rem;
+}
+
+.glance-card strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.back-to-top {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 40;
+  width: 3rem;
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #fff;
+  background-color: var(--minutes-accent, #1b5e20);
+  border-radius: 999px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.back-to-top:hover {
+  filter: brightness(1.08);
+}
+
+.back-to-top:active {
+  transform: scale(0.96);
+}
+
+.btn-primary,
+.btn-secondary {
+  min-width: 6.5rem;
+  height: 2.35rem;
+  padding: 0 0.85rem;
+  border-radius: 8px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.btn-primary {
+  border: none;
+  color: #fff;
+  background-color: var(--minutes-accent, #1b5e20);
+}
+
+.btn-primary:hover {
+  background-color: hsl(125deg 38% 26%);
+}
+
+.btn-primary:active,
+.btn-secondary:active {
+  transform: translateY(1px);
+}
+
+.btn-secondary {
+  border: 1px solid hsl(120deg 10% 70%);
+  color: var(--minutes-ink, #1f2933);
+  background-color: #fff;
+}
+
+.btn-secondary:hover {
+  background-color: hsl(100deg 30% 96%);
+}
+
+.form-actions button + button {
+  margin-left: 0.5rem;
+}
+
+@media (max-width: 900px) {
+  .glance-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  html {
+    font-size: 94%;
+  }
+
+  .glance-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .nav-pills {
+    justify-content: flex-start;
+  }
+
+  .page-shell {
+    width: 100%;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+
+  .back-to-top {
+    right: 0.65rem;
+    bottom: 0.65rem;
+  }
+
+  .form-actions button {
+    display: block;
+    width: 100%;
+    max-width: 20rem;
+  }
+
+  .form-actions button + button {
+    margin-left: 0;
+    margin-top: 0.4rem;
+  }
 }

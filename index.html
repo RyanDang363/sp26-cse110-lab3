@@ -6,19 +6,23 @@
     <meta name="description" content="Meeting minutes for Troop 610 patrol leaders council: spring camp preparation, gear, and safety.">
     <link rel="icon" href="assets/favicon.png" type="image/png">
     <title>Troop 610 PLC — Spring Camp Prep Meeting Minutes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="site-header">
       <div class="site-header__inner">
+        <span class="lab-utility-hidden" aria-hidden="true">Layout demo marker</span>
         <p class="accent-chip">Troop 610 PLC — spring camp planning</p>
         <p class="banner-note">Draft minutes for families and patrol leaders.</p>
-        <h1>Troop 610 Patrol Leaders' Council</h1>
+        <h1 class="hero-title">Troop 610 Patrol Leaders' Council</h1>
         <h2>Spring Camp Preparation</h2>
         <h3>April 8, 2026 — 7:00 p.m. at Ethan's House</h3>
-        <p>
-          <span class="recorded-by">Minutes recorded by:</span>
-          Troop Scribe <span class="accent-name">Ryan D.</span>
+        <p class="meta-line">
+          <span class="recorded-by">Minutes recorded by:</span><span class="inline-glue"> </span><span class="inline-glue">Troop Scribe</span>
+          <span class="accent-name inline-glue"> Ryan D.</span>
           <br>
         </p>
       </div>
@@ -26,7 +30,7 @@
 
     <div class="page-shell">
     <nav aria-label="Minutes sections">
-      <ul>
+      <ul class="nav-pills">
         <li><a href="#attendance">Attendance</a></li>
         <li><a href="#agenda">Agenda</a></li>
         <li><a href="#unfinished">Unfinished business</a></li>
@@ -37,7 +41,24 @@
       </ul>
     </nav>
     <hr>
-    <main>
+    <section class="minutes-section glance-panel" aria-label="Meeting snapshot">
+      <h2>At a glance</h2>
+      <div class="glance-grid">
+        <div class="glance-card">
+          <strong>Where</strong>
+          Ethan's house — keep driveways clear for neighbors.
+        </div>
+        <div class="glance-card">
+          <strong>When</strong>
+          7:00 p.m. start; plan five minutes for sign-in.
+        </div>
+        <div class="glance-card">
+          <strong>Focus</strong>
+          Spring camp packing, meals, and safety checkpoints.
+        </div>
+      </div>
+    </section>
+    <main class="minutes-main">
       <section id="attendance" class="minutes-section">
         <h2>Attendance</h2>
         <p>
@@ -112,7 +133,7 @@
           Whiteboard photo: packing zones drawn during the meeting to keep the trailer organized.
         </p>
         <p>
-          <img src="https://blog-assets.thedyrt.com/uploads/2018/05/picking-a-campsite.jpg" width="480" height="280" alt="Image of a campsite">
+          <img src="https://blog-assets.thedyrt.com/uploads/2018/05/picking-a-campsite.jpg" alt="Image of a campsite">
         </p>
         <h3>Audio clip </h3>
         <audio controls src="assets/audio.m4a">
@@ -120,7 +141,7 @@
         </audio>
         <h3>Video clip (PLC meeting)</h3>
         <p>Cooking Demo</p>
-        <video controls width="480" height="270">
+        <video controls>
           <source src="assets/IMG_1427.MOV" type="video/quicktime">
           Your browser does not support the video element.
         </video>
@@ -175,9 +196,9 @@
               <label for="notes">Additional feedback</label><br>
               <textarea id="notes" name="notes" rows="4" cols="50" placeholder="Ideas, concerns, or shout-outs..."></textarea>
             </p>
-            <p>
-              <button type="submit">Submit</button>
-              <button type="reset">Clear form</button>
+            <p class="form-actions">
+              <button class="btn-primary" type="submit">Submit</button>
+              <button class="btn-secondary" type="reset">Clear form</button>
             </p>
           </fieldset>
         </form>
@@ -190,6 +211,7 @@
       </p>
       <p><small class="fine-print">Minutes are a record for scouts and families.</small></p>
     </footer>
+    <a class="back-to-top" href="#">Top</a>
     </div>
   </body>
 </html>
