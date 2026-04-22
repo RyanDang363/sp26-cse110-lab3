@@ -331,3 +331,86 @@ audio {
     margin-top: 0.4rem;
   }
 }
+
+/* =============================================================================
+   Lab 3 — Selector curriculum (class, id, *, element, attribute, pseudos,
+   selector lists, combinators, :has(), nesting)
+   Universal selector: see `*` ruleset near the top of this file.
+   ============================================================================= */
+
+/* ID selectors */
+#plc-title {
+  scroll-margin-top: 5rem;
+}
+
+#minutes-root {
+  scroll-margin-top: 4.5rem;
+}
+
+/* Element selector */
+hr {
+  border: none;
+  border-top: 1px solid hsl(120deg 10% 82%);
+  margin: 0.75rem 0 1rem;
+}
+
+/* Attribute selectors (exact match) */
+[data-section="callout"] {
+  border-left: 4px solid hsla(33deg 100% 45% / 0.45);
+  padding-left: 0.45rem;
+}
+
+[type="submit"] {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.12);
+}
+
+/* Selector list */
+time,
+legend {
+  color: hsl(125deg 26% 26%);
+  font-weight: 600;
+}
+
+/* Descendant combinator (main p) */
+main p {
+  max-width: 70ch;
+}
+
+/* Child combinator (main > section) */
+main > section {
+  scroll-margin-top: 4.75rem;
+}
+
+/* Adjacent sibling combinator */
+.minutes-section h2 + p {
+  margin-top: 0.25rem;
+}
+
+/* General sibling combinator */
+.topic-lead ~ p {
+  color: hsl(215deg 12% 34%);
+}
+
+/* Combining two selectors (element.class) */
+section.minutes-section {
+  position: relative;
+}
+
+/* Pseudo-class on paragraphs (example style: p:hover) */
+main p:hover {
+  background-color: hsla(95deg 45% 88% / 0.35);
+}
+
+/* :has() — relational selector */
+section:has(img) {
+  box-shadow: inset 3px 0 0 var(--minutes-accent, #1b5e20);
+}
+
+/* Nested selector (native CSS nesting) */
+.minutes-section {
+  & details {
+    border: 1px dashed hsl(120deg 14% 72%);
+    padding: 0.4rem 0.55rem;
+    border-radius: 8px;
+  }
+}
