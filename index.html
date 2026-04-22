@@ -17,7 +17,7 @@
         <span class="lab-utility-hidden" aria-hidden="true">Layout demo marker</span>
         <p class="accent-chip">Troop 610 PLC — spring camp planning</p>
         <p class="banner-note">Draft minutes for families and patrol leaders.</p>
-        <h1 class="hero-title">Troop 610 Patrol Leaders' Council</h1>
+        <h1 id="plc-title" class="hero-title">Troop 610 Patrol Leaders' Council</h1>
         <h2>Spring Camp Preparation</h2>
         <h3>April 8, 2026 — 7:00 p.m. at Ethan's House</h3>
         <p class="meta-line">
@@ -58,7 +58,7 @@
         </div>
       </div>
     </section>
-    <main class="minutes-main">
+    <main id="minutes-root" class="minutes-main">
       <section id="attendance" class="minutes-section">
         <h2>Attendance</h2>
         <p>
@@ -101,7 +101,7 @@
         </ul>
       </section>
 
-      <section id="new-business" class="minutes-section">
+      <section id="new-business" class="minutes-section" data-section="callout">
         <h2>New business</h2>
         <p>
           New topics introduced this week included a <i>Leave No Trace</i> refresher for newer scouts
@@ -125,6 +125,9 @@
           Parent asked whether younger scouts could skip the longer hike on Sunday; consensus was to
           offer a shorter loop with two adults if at least four scouts sign up by Wednesday.
         </p>
+        <h3 class="topic-lead">Follow-up timing</h3>
+        <p>Adults confirm the shorter loop headcount by Wednesday evening.</p>
+        <p>Patrol leaders post a reminder in patrol channels after Monday school.</p>
       </section>
 
       <section id="media" class="minutes-section">
