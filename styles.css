@@ -1,0 +1,157 @@
+/* =============================================================================
+   Lab 3 — Foundation stylesheet (colors, variables, units, box model, text)
+   ============================================================================= */
+
+/* Design tokens: custom properties used with fallbacks via var() */
+:root {
+  --minutes-ink: #1f2933;
+  --minutes-surface: #f4f7f4;
+  --minutes-accent: #1b5e20;
+  --minutes-border: hsl(120deg 10% 78%);
+}
+
+/* Wider-gamut colors: display-p3 + color-mix, with plain-CSS fallback */
+.accent-chip {
+  color: color(display-p3 0.15 0.42 0.24);
+  background-color: color-mix(in srgb, var(--minutes-accent, #1b5e20) 72%, white 28%);
+}
+
+@supports not (color: color(display-p3 1 1 1)) {
+  .accent-chip {
+    color: var(--minutes-accent, #1b5e20);
+    background-color: hsla(100deg 30% 92% / 1);
+  }
+}
+
+/* Universal box model; keeps padding math predictable */
+* {
+  box-sizing: border-box;
+}
+
+/* Element selector + background + rgb via variable fallback chain */
+body {
+  margin: 0;
+  color: var(--minutes-ink, rgb(31, 41, 51));
+  background-color: var(--minutes-surface, #f4f7f4);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.55;
+}
+
+/* Hex background on header band */
+.site-header {
+  background-color: #e8f5e9;
+  /* Border LONGHAND (per edge / per property) for lab requirement */
+  border-top-width: 0;
+  border-right-width: 0;
+  border-bottom-width: 3px;
+  border-left-width: 0;
+  border-top-style: none;
+  border-right-style: none;
+  border-bottom-style: solid;
+  border-left-style: none;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  border-bottom-color: rgba(27, 94, 32, 0.35);
+  border-left-color: transparent;
+  border-radius: 0 0 14px 14px;
+}
+
+/* Margin LONGHAND + padding LONGHAND; relative units rem and % */
+.site-header__inner {
+  margin-top: 10px;
+  margin-right: auto;
+  margin-bottom: 12px;
+  margin-left: auto;
+  max-width: 52rem;
+  padding-top: 1.25rem;
+  padding-right: 4%;
+  padding-bottom: 1rem;
+  padding-left: 4%;
+  /* Absolute unit: pt on top accent rule */
+  border-top: 2pt solid #2e7d32;
+}
+
+/* Margin SHORTHAND (not auto) on a small banner line */
+.banner-note {
+  margin: 6px 12px 8px 12px;
+  padding: 0.35em 0.5em;
+  font-size: 0.9rem;
+  color: rgba(55, 65, 81, 0.92);
+  background-color: hsla(95deg 40% 96% / 1);
+  /* Absolute unit: px border via shorthand below in border-radius context */
+  border-radius: 6px;
+}
+
+/* Page shell: margin AUTO centers content; padding SHORTHAND; width uses % (relative) */
+.page-shell {
+  margin: 0.75rem auto;
+  width: 92%;
+  max-width: 52rem;
+  min-width: 280px;
+  padding: 0.5em 1rem 1.25em 1rem;
+}
+
+/* Section cards: border SHORTHAND (width + style + color) + radius; padding SHORTHAND; absolute cm margin */
+.minutes-section {
+  background-color: #ffffff;
+  border: 2px solid hsl(120deg 10% 78%);
+  border-radius: 12px;
+  margin-top: 0.15cm;
+  margin-bottom: 0.15cm;
+  padding: 1rem 1.15rem 1.05rem 1.15rem;
+}
+
+/* Headings: hsl text color */
+.minutes-section h2 {
+  color: hsl(125deg 32% 22%);
+  text-align: left;
+  text-decoration: none;
+}
+
+/* rgb example on first paragraph emphasis */
+.recorded-by {
+  color: rgb(27, 94, 32);
+}
+
+/* Named color */
+.accent-name {
+  color: orange;
+}
+
+/* hsla on footer supporting line */
+.site-footer .fine-print {
+  color: hsla(215deg 16% 35% / 0.9);
+}
+
+/* Footer: text-align + text-decoration */
+.site-footer {
+  text-align: center;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.site-footer small {
+  text-decoration: underline dotted hsl(120deg 10% 65%);
+}
+
+/* Nav links: rgba + relative rem units for padding */
+nav a {
+  color: var(--minutes-accent, #1b5e20);
+  padding: 0.35rem 0.55rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+nav ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
